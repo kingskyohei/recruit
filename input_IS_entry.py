@@ -20,7 +20,7 @@ def is_entry_kaisu(naitei_cate1,naitei_cate2,IS_ENTRY_DATA):
     median_is_entry_kaisu.sort_index(ascending=False)
 
     # ISエントリー回数の合計値算出
-    sum_is_entry_kaisu = IS_ENTRY_DATA_CUS.groupby(['YM']).sum()
+    sum_is_entry_kaisu = IS_ENTRY_DATA_CUS.groupby(['YM']).count()
     sum_is_entry_kaisu.rename(columns={'IS_ENTRY_KAISU': 'SUM_IS_ENTRY_KAISU'}, inplace=True)
     sum_is_entry_kaisu.sort_index(ascending=False)
 
@@ -49,7 +49,7 @@ def is_entry_kaisu(naitei_cate1,naitei_cate2,IS_ENTRY_DATA):
     m_median_is_entry_kaisu.sort_index(ascending=False)
 
     # M認定の学生のISエントリー回数の合計値算出
-    m_sum_is_entry_kaisu = M_IS_ENTRY_DATA_CUS.groupby(['YM']).sum()
+    m_sum_is_entry_kaisu = M_IS_ENTRY_DATA_CUS.groupby(['YM']).count()
     m_sum_is_entry_kaisu.rename(columns={'IS_ENTRY_KAISU': 'SUM_IS_ENTRY_KAISU'}, inplace=True)
     m_sum_is_entry_kaisu.sort_index(ascending=False)
 
@@ -83,7 +83,7 @@ def is_entry_kaisu(naitei_cate1,naitei_cate2,IS_ENTRY_DATA):
     t_median_is_entry_kaisu.sort_index(ascending=False)
 
     # T認定の学生のISエントリー回数の合計値算出
-    t_sum_is_entry_kaisu = T_IS_ENTRY_DATA_CUS.groupby(['YM']).sum()
+    t_sum_is_entry_kaisu = T_IS_ENTRY_DATA_CUS.groupby(['YM']).count()
     t_sum_is_entry_kaisu.rename(columns={'IS_ENTRY_KAISU': 'SUM_IS_ENTRY_KAISU'}, inplace=True)
     t_sum_is_entry_kaisu.sort_index(ascending=False)
 
@@ -114,7 +114,6 @@ def is_entry_kaisu(naitei_cate1,naitei_cate2,IS_ENTRY_DATA):
         'MEAN_IS_ENTRY_KAISU_all']
     is_entry_merged_ALL_M_T['t_median_dif'] = is_entry_merged_ALL_M_T['MEDIAN_IS_ENTRY_KAISU_t'] - is_entry_merged_ALL_M_T[
         'MEDIAN_IS_ENTRY_KAISU_all']
-
 
     # 出力カラムの設定
     IS_ENTRY_CSV_DATA = is_entry_merged_ALL_M_T[["m_mean_dif", "m_median_dif", "t_mean_dif", "t_median_dif", "SUM_IS_ENTRY_KAISU_m", "SUM_IS_ENTRY_KAISU_t"]]

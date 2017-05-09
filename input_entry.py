@@ -48,7 +48,7 @@ def pre_entry_kaisu(naitei_cate1,naitei_cate2,PRE_ENTRY_DATA):
     m_median_pre_entry_kaisu.sort_index(ascending=False)
 
     # M認定の学生のプレエントリー回数の合計値算出
-    m_sum_pre_entry_kaisu = M_PRE_ENTRY_DATA_CUS.groupby(['YM']).sum()
+    m_sum_pre_entry_kaisu = M_PRE_ENTRY_DATA_CUS.groupby(['YM']).count()
     m_sum_pre_entry_kaisu.rename(columns={'PRE_ENTRY_KAISU':'SUM_PRE_ENTRY_KAISU'},inplace=True)
     m_sum_pre_entry_kaisu.sort_index(ascending=False)
 
@@ -80,7 +80,7 @@ def pre_entry_kaisu(naitei_cate1,naitei_cate2,PRE_ENTRY_DATA):
     t_median_pre_entry_kaisu.sort_index(ascending=False)
 
     # T認定の学生のプレエントリー回数の合計値算出
-    t_sum_pre_entry_kaisu = T_PRE_ENTRY_DATA_CUS.groupby(['YM']).sum()
+    t_sum_pre_entry_kaisu = T_PRE_ENTRY_DATA_CUS.groupby(['YM']).count()
     t_sum_pre_entry_kaisu.rename(columns={'PRE_ENTRY_KAISU':'SUM_PRE_ENTRY_KAISU'},inplace=True)
     t_sum_pre_entry_kaisu.sort_index(ascending=False)
 

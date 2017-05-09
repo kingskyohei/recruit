@@ -47,8 +47,8 @@ def login_kaisu(naitei_cate1,naitei_cate2,LOGIN_DATA):
     m_median_login_kaisu.rename(columns={'LOGIN_KAISU':'MEDIAN_LOGIN_KAISU'},inplace=True)
     m_median_login_kaisu.sort_index(ascending=False)
 
-    # M認定の学生のログイン回数の合計値算出
-    m_sum_login_kaisu = M_LOGIN_DATA_CUS.groupby(['YM']).sum()
+    # M認定の学生のログイン人数をカウント
+    m_sum_login_kaisu = M_LOGIN_DATA_CUS.groupby(['YM']).count()
     m_sum_login_kaisu.rename(columns={'LOGIN_KAISU':'SUM_LOGIN_KAISU'},inplace=True)
     m_sum_login_kaisu.sort_index(ascending=False)
 
@@ -80,7 +80,7 @@ def login_kaisu(naitei_cate1,naitei_cate2,LOGIN_DATA):
     t_median_login_kaisu.sort_index(ascending=False)
 
     # T認定の学生のログイン回数の合計値算出
-    t_sum_login_kaisu = T_LOGIN_DATA_CUS.groupby(['YM']).sum()
+    t_sum_login_kaisu = T_LOGIN_DATA_CUS.groupby(['YM']).count()
     t_sum_login_kaisu.rename(columns={'LOGIN_KAISU':'SUM_LOGIN_KAISU'},inplace=True)
     t_sum_login_kaisu.sort_index(ascending=False)
 

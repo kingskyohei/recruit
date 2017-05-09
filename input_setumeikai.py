@@ -19,7 +19,7 @@ def setumeikai_kaisu(naitei_cate1,naitei_cate2,SETUMEIKAI_DATA):
     median_setumeikai_kaisu.sort_index(ascending=False)
 
     # ログイン回数の合計値算出
-    sum_setumeikai_kaisu = SETUMEIKAI_DATA_CUS.groupby(['YM']).sum()
+    sum_setumeikai_kaisu = SETUMEIKAI_DATA_CUS.groupby(['YM']).count()
     sum_setumeikai_kaisu.rename(columns={'SETUMEIKAI_KAISU': 'SUM_SETUMEIKAI_KAISU'}, inplace=True)
     sum_setumeikai_kaisu.sort_index(ascending=False)
 
@@ -49,7 +49,7 @@ def setumeikai_kaisu(naitei_cate1,naitei_cate2,SETUMEIKAI_DATA):
     m_median_setumeikai_kaisu.sort_index(ascending=False)
 
     # M認定の学生のログイン回数の合計値算出
-    m_sum_setumeikai_kaisu = M_SETUMEIKAI_DATA_CUS.groupby(['YM']).sum()
+    m_sum_setumeikai_kaisu = M_SETUMEIKAI_DATA_CUS.groupby(['YM']).count()
     m_sum_setumeikai_kaisu.rename(columns={'SETUMEIKAI_KAISU': 'SUM_SETUMEIKAI_KAISU'}, inplace=True)
     m_sum_setumeikai_kaisu.sort_index(ascending=False)
 
@@ -81,7 +81,7 @@ def setumeikai_kaisu(naitei_cate1,naitei_cate2,SETUMEIKAI_DATA):
     t_median_setumeikai_kaisu.sort_index(ascending=False)
 
     # T認定の学生のログイン回数の合計値算出
-    t_sum_setumeikai_kaisu = T_SETUMEIKAI_DATA_CUS.groupby(['YM']).sum()
+    t_sum_setumeikai_kaisu = T_SETUMEIKAI_DATA_CUS.groupby(['YM']).count()
     t_sum_setumeikai_kaisu.rename(columns={'SETUMEIKAI_KAISU': 'SUM_SETUMEIKAI_KAISU'}, inplace=True)
     t_sum_setumeikai_kaisu.sort_index(ascending=False)
 
