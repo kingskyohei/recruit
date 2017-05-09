@@ -114,20 +114,3 @@ def login_kaisu(naitei_cate1,naitei_cate2,LOGIN_DATA):
     # print(LOGIN_CSV_DATA)
     # csvデータの出力
     LOGIN_CSV_DATA.to_csv('D:/Users/01016964/Desktop/内定者分析関連/顔ぶれ分析/レオパレス加工/レオパレス21対応/python_output/LOGIN.csv',index=True,encoding="utf-8")
-
-
-##
-# ログイン回数集計の関数呼び出し
-
-# # 内定者のID取り込み
-# naitei_cate1 = pd.read_csv("D:/Users/01016964/Desktop/内定者分析関連\顔ぶれ分析/レオパレス加工/レオパレス21対応/python_input/M_NINTEI.csv",sep="\t",names=['GM_MASTER_ID'])
-# naitei_cate2 = pd.read_csv("D:/Users/01016964/Desktop/内定者分析関連\顔ぶれ分析/レオパレス加工/レオパレス21対応/python_input/T_NINTEI.csv",sep="\t",names=['GM_MASTER_ID'])
-#
-# # 各種データ取り込み
-# # ログイン情報
-# LOGIN_DATA = pd.read_csv("D:/Users/01016964/Desktop/内定者分析関連\顔ぶれ分析/レオパレス加工/レオパレス21対応/python_input/LOGIN.csv",sep="\t",
-#                          names=['GM_MASTER_ID','YM','LOGIN_KAISU'],
-#                          )
-# login = LOGIN()
-# login.login_kaisu(naitei_cate1,naitei_cate2,LOGIN_DATA)
-# # login_kaisu()

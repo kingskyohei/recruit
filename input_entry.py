@@ -1,30 +1,7 @@
 import pandas as pd
 
-# 内定者のID取り込み
-naitei_cate1 = pd.read_csv("D:/Users/01016964/Desktop/内定者分析関連\顔ぶれ分析/レオパレス加工/レオパレス21対応/python_input/M_NINTEI.csv",sep="\t",names=['GM_MASTER_ID'])
-naitei_cate2 = pd.read_csv("D:/Users/01016964/Desktop/内定者分析関連\顔ぶれ分析/レオパレス加工/レオパレス21対応/python_input/T_NINTEI.csv",sep="\t",names=['GM_MASTER_ID'])
 
-# 各種データ取り込み
-# ログイン情報
-# LOGIN_DATA = pd.read_csv("D:/Users/01016964/Desktop/内定者分析関連\顔ぶれ分析/レオパレス加工/レオパレス21対応/python_input/LOGIN.csv",sep="\t",
-#                          names=['GM_MASTER_ID','YM','LOGIN_KAISU'],
-#                          )
-
-# ISエントリー
-# IS_ENTRY_DATA = pd.read_csv("D:/Users/01016964/Desktop/内定者分析関連\顔ぶれ分析/レオパレス加工/レオパレス21対応/python_input/IS.csv")
-#
-# # プレエントリー
-# PRE_ENTRY_DATA = pd.read_csv("D:/Users/01016964/Desktop/内定者分析関連\顔ぶれ分析/レオパレス加工/レオパレス21対応/python_input/PRE_ENTRY.csv")
-
-PRE_ENTRY_DATA = pd.read_csv("D:/Users/01016964/Desktop/内定者分析関連\顔ぶれ分析/レオパレス加工/レオパレス21対応/python_input/PRE_ENTRY.csv",sep="\t",
-                         names=['GM_MASTER_ID','YM','PRE_ENTRY_KAISU'],
-                         )
-
-
-# # 説明会予約
-# SETUMEIKAI_YOYAKU = pd.read_csv("D:/Users/01016964/Desktop/内定者分析関連\顔ぶれ分析/レオパレス加工/レオパレス21対応/python_input/SETUMEIKAI.csv")
-
-def pre_entry_kaisu():
+def pre_entry_kaisu(naitei_cate1,naitei_cate2,PRE_ENTRY_DATA):
 
     ##
     # 学生全体の処理
@@ -132,6 +109,3 @@ def pre_entry_kaisu():
 
     # csvデータの出力
     PRE_ENTRY_CSV_DATA.to_csv('D:/Users/01016964/Desktop/内定者分析関連/顔ぶれ分析/レオパレス加工/レオパレス21対応/python_output/PRE_ENTRY.csv',index=True,encoding="utf-8")
-
-# csvデータの出力
-pre_entry_kaisu()

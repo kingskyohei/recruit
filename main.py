@@ -31,16 +31,33 @@ LOGIN_DATA = pd.read_csv("D:/Users/01016964/Desktop/内定者分析関連\顔ぶ
                          names=['GM_MASTER_ID','YM','LOGIN_KAISU'],
                          )
 
+# ISエントリー情報
+IS_ENTRY_DATA = pd.read_csv("D:/Users/01016964/Desktop/内定者分析関連\顔ぶれ分析/レオパレス加工/レオパレス21対応/python_input/IS_ENTRY.csv",sep="\t",
+                         names=['GM_MASTER_ID','YM','IS_ENTRY_KAISU'],
+                         )
+
+# プレエントリー情報
+PRE_ENTRY_DATA = pd.read_csv("D:/Users/01016964/Desktop/内定者分析関連\顔ぶれ分析/レオパレス加工/レオパレス21対応/python_input/PRE_ENTRY.csv",sep="\t",
+                         names=['GM_MASTER_ID','YM','PRE_ENTRY_KAISU'],
+                         )
+
+# 説明会情報
+SETUMEIKAI_DATA = pd.read_csv("D:/Users/01016964/Desktop/内定者分析関連\顔ぶれ分析/レオパレス加工/レオパレス21対応/python_input/.csv",sep="\t",
+                         names=['GM_MASTER_ID','YM','_KAISU'],
+                         )
+
 # 集計
 #  ログインの集計
 input_login.login_kaisu(naitei_cate1,naitei_cate2,LOGIN_DATA)
 
-# プレエントリーの集計
+# ISエントリーの集計
+input_IS_entry.is_entry_kaisu(naitei_cate1,naitei_cate2,IS_ENTRY_DATA)
 
-# エントリーの集計
+# プレエントリーの集計
+input_entry.pre_entry_kaisu(naitei_cate1,naitei_cate2,PRE_ENTRY_DATA)
 
 # 説明会予約の集計
-
+input_setumeikai.setumeikai_kaisu(naitei_cate1,naitei_cate2,SETUMEIKAI_DATA)
 
 ### レポート出力(input:csv ouput:excelファイル)
 make_report.make_report()
