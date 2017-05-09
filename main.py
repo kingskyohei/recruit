@@ -57,4 +57,4 @@ input_entry.pre_entry_kaisu(naitei_cate1,naitei_cate2,PRE_ENTRY_DATA)
 input_setumeikai.setumeikai_kaisu(naitei_cate1,naitei_cate2,SETUMEIKAI_DATA)
 #
 # ### レポート出力(input:csv ouput:excelファイル)
-# make_report.make_report()
+make_report.make_report()
