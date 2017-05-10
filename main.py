@@ -45,18 +45,17 @@ SETUMEIKAI_DATA = pd.read_csv("D:/Users/01016964/Desktop/内定者分析関連\�
 
 
 # 集計
-#  ログインの集計
+# #  ログインの集計
 input_login.login_kaisu(naitei_cate1,naitei_cate2,LOGIN_DATA)
 
 # # ISエントリーの集計
 input_IS_entry.is_entry_kaisu(naitei_cate1,naitei_cate2,IS_ENTRY_DATA)
 
-#
 # # プレエントリーの集計
 input_entry.pre_entry_kaisu(naitei_cate1,naitei_cate2,PRE_ENTRY_DATA)
 #
 # # 説明会予約の集計
 input_setumeikai.setumeikai_kaisu(naitei_cate1,naitei_cate2,SETUMEIKAI_DATA)
 #
-# ### レポート出力(input:csv ouput:excelファイル)
+# # レポート出力(input:csv ouput:excelファイル)
 make_report.make_report()
