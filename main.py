@@ -43,12 +43,14 @@ SETUMEIKAI_DATA = pd.read_csv("D:/Users/01016964/Desktop/内定者分析関連\�
                          names=['GM_MASTER_ID','YM','SETUMEIKAI_KAISU'],
                          )
 
+
 # 集計
 #  ログインの集計
 input_login.login_kaisu(naitei_cate1,naitei_cate2,LOGIN_DATA)
 
 # # ISエントリーの集計
 input_IS_entry.is_entry_kaisu(naitei_cate1,naitei_cate2,IS_ENTRY_DATA)
+
 #
 # # プレエントリーの集計
 input_entry.pre_entry_kaisu(naitei_cate1,naitei_cate2,PRE_ENTRY_DATA)
