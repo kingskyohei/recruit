@@ -66,12 +66,12 @@ def make_report():
     # ログイン情報書き込み
     for i, ni in enumerate(names_login):
         worksheet.write_column('A2', file_login['YM'], string)
-        worksheet.write_column('B2', file_login['m_mean_dif'], decimal)
-        worksheet.write_column('C2', file_login['m_median_dif'], decimal)
-        worksheet.write_column('D2', file_login['t_mean_dif'], decimal)
-        worksheet.write_column('E2', file_login['t_median_dif'], decimal)
-        worksheet.write_column('F2', file_login['SUM_LOGIN_KAISU_m'], integer)
-        worksheet.write_column('G2', file_login['SUM_LOGIN_KAISU_t'], integer)
+        worksheet.write_column('B2', file_login['M認定_来訪UU_平均値'], decimal)
+        worksheet.write_column('C2', file_login['M認定_来訪UU_中央値'], decimal)
+        worksheet.write_column('D2', file_login['T認定_来訪UU_平均値'], decimal)
+        worksheet.write_column('E2', file_login['T認定_来訪UU_中央値'], decimal)
+        worksheet.write_column('F2', file_login['M認定_UU数'], integer)
+        worksheet.write_column('G2', file_login['T認定_UU数'], integer)
 
     # ISエントリー情報書き込み
     for i, ni in enumerate(names_entry):

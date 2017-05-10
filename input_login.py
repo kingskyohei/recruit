@@ -56,8 +56,6 @@ def login_kaisu(naitei_cate1,naitei_cate2,LOGIN_DATA):
     m_login_merged = pd.merge(m_mean_login_kaisu,m_median_login_kaisu,left_index='YM',right_index='YM',how='inner',)
     m_login_merged_2 = pd.merge(m_login_merged,m_sum_login_kaisu,left_index='YM',right_index='YM',how='inner')
 
-    # print(m_login_merged_2)
-    # 月ごとに全体のLOGIN回数の平均値、中央値、合計値を求める
 
 
     ##
@@ -107,9 +105,11 @@ def login_kaisu(naitei_cate1,naitei_cate2,LOGIN_DATA):
     # login_merged_ALL_M_T['sum_dif'] = login_merged_ALL_M_T['MEDIAN_LOGIN_KAISU_m'] - login_merged_ALL_M_T['MEDIAN_LOGIN_KAISU_all']
 
     # 出力カラムの設定
-    # GM_MASTER_ID行の削除
     print(login_merged_ALL_M_T)
     LOGIN_CSV_DATA = login_merged_ALL_M_T[["m_mean_dif","m_median_dif","t_mean_dif","t_median_dif","SUM_LOGIN_KAISU_m","SUM_LOGIN_KAISU_t"]]
+
+    # カラム名変更
+    LOGIN_CSV_DATA.rename(columns={'m_mean_dif':'M認定_来訪UU_平均値','m_median_dif':'M認定_来訪UU_中央値','t_mean_dif':'T認定_来訪UU_平均値','t_median_dif':'T認定_来訪UU_中央値','SUM_LOGIN_KAISU_m':'M認定_UU数','SUM_LOGIN_KAISU_t':'T認定_UU数'},inplace=True)
 
     # print(LOGIN_CSV_DATA)
     # csvデータの出力
